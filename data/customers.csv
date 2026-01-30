@@ -1,0 +1,4 @@
+name,phone,email,message_status,response,response_timestamp,token
+Alice Johnson,+15551234567,alice@example.com,sent,YES,2026-01-30T02:16:16.046Z,175b113c-5bd7-499d-acb7-93d0d4673bfc
+Bob Smith,+15559876543,bob@example.com,sent,NO,2026-01-30T02:16:21.815Z,b99b51ee-39e5-492d-884e-cec4823d34a1
+Carol Davis,+15555551234,carol@example.com,sent,,,cdafb60e-0d6b-4fc5-b19c-43729ca626e6

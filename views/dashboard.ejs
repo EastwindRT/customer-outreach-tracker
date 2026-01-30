@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="30">
+  <title>Customer Outreach Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Customer Outreach Dashboard</h1>
+
+  <div class="stats">
+    <div class="stat"><strong><%= stats.total %></strong><span>Total</span></div>
+    <div class="stat"><strong><%= stats.sent %></strong><span>Sent</span></div>
+    <div class="stat"><strong><%= stats.responded %></strong><span>Responded</span></div>
+    <div class="stat"><strong><%= stats.pending %></strong><span>Pending</span></div>
+  </div>
+
+  <form method="POST" action="/send" style="margin: 1.5rem 0;">
+    <button type="submit" class="btn">Send Outreach</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Response</th>
+        <th>Responded At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% customers.forEach(function(c) { %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.phone %></td>
+        <td><%= c.email %></td>
+        <td><span class="badge <%= c.message_status === 'sent' ? 'sent' : 'unsent' %>"><%= c.message_status || 'unsent' %></span></td>
+        <td><span class="badge <%= c.response === 'YES' ? 'yes' : c.response === 'NO' ? 'no' : '' %>"><%= c.response || '-' %></span></td>
+        <td><%= c.response_timestamp || '-' %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

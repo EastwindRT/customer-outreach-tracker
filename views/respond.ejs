@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Response</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="respond-container">
+    <h1>We value your feedback!</h1>
+    <p>Please select your response:</p>
+    <form method="POST" action="/respond/<%= token %>">
+      <button type="submit" name="choice" value="YES" class="btn yes">YES</button>
+      <button type="submit" name="choice" value="NO" class="btn no">NO</button>
+    </form>
+  </div>
+</body>
+</html>
